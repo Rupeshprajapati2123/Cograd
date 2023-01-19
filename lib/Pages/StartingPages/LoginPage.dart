@@ -2,13 +2,13 @@
 // import 'package:modernloginui/pages/login_page.dart';
 import 'package:cograd/util/MyButton.dart';
 import 'package:cograd/util/MyTextField.dart';
+import 'package:cograd/util/SquareTile.dart';
 import 'package:flutter/material.dart';
-
 // import './welcum.dart';
 
 // import 'package:'
-class SignupPage extends StatelessWidget {
-  SignupPage({super.key});
+class LoginPage extends StatelessWidget {
+  LoginPage({super.key});
   static const String id = "signupPage";
   // controllers for textfield
   bool showspin = false;
@@ -39,7 +39,7 @@ class SignupPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Sign Up',
+                      'Log In`',
                       style: TextStyle(color: Color(0xFF04459F), fontSize: 26),
                     ),
                     SizedBox(),
@@ -102,54 +102,54 @@ class SignupPage extends StatelessWidget {
                   ),
 
               // or continue with
-              // Padding(
-              //   padding: const EdgeInsets.symmetric(horizontal: 25.0),
-              //   child: Row(
-              //     children: [
-              //       Expanded(
-              //         child: Divider(
-              //           color: Colors.grey[400],
-              //           thickness: 0.5,
-              //         ),
-              //       ),
-              //       Padding(
-              //         padding: const EdgeInsets.symmetric(horizontal: 10.0),
-              //         child: Text(
-              //           'Or continue with',
-              //           style: TextStyle(color: Colors.grey[700]),
-              //         ),
-              //       ),
-              //       Expanded(
-              //         child: Divider(
-              //           color: Colors.grey[400],
-              //           thickness: 0.5,
-              //         ),
-              //       ),
-              //     ],
-              //   ),
-              // ),
-
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Divider(
+                        color: Colors.grey[400],
+                        thickness: 0.5,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      child: Text(
+                        'Or continue with',
+                        style: TextStyle(color: Colors.grey[700]),
+                      ),
+                    ),
+                    Expanded(
+                      child: Divider(
+                        color: Colors.grey[400],
+                        thickness: 0.5,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              //
               // apple + google sign in
+              //
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  // google
+                  SquareTile(imagePath: 'assets/images/google.png'),
 
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.center,
-              //   children: const [
-              //     // google
-              //     SquareTile(imagePath: 'lib/images/google.png'),
-              //
-              //     SizedBox(width: 25),
-              //
-              //     // apple
-              //     SquareTile(imagePath: 'lib/images/apple.png'),
-              //   ],
-              // ),
+                  SizedBox(width: 25),
+
+                  // apple
+                  SquareTile(imagePath: 'assets/images/facebook.png'),
+                ],
+              ),
 
               // not a member? register now
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Already have an Account?',
+                    "Don't have an Account?",
                     style: TextStyle(color: Colors.grey[700]),
                   ),
                   const SizedBox(width: 4),

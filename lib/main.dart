@@ -1,4 +1,4 @@
-import 'package:cograd/Pages/StartingPages/IntroSlider.dart';
+import 'package:cograd/Pages/MainPage.dart';
 import 'package:flutter/material.dart';
 
 Future<void> main() async {
@@ -18,20 +18,9 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Fl',
-      theme: ThemeData(
-        primaryColor: Colors.teal,
-        scaffoldBackgroundColor: Colors.white,
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            elevation: 0,
-            // primary: ,
-            shape: const StadiumBorder(),
-            maximumSize: const Size(double.infinity, 56),
-            minimumSize: const Size(double.infinity, 56),
-          ),
-        ),
-      ),
-      home: IntroSlider(),
+      theme:
+          ThemeData(primaryColor: Colors.white, backgroundColor: Colors.white),
+      home: MainPage(),
     );
   }
 }
