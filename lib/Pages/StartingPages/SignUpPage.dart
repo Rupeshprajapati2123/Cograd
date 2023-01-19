@@ -55,6 +55,7 @@ class SignupPage extends StatelessWidget {
                 controller: _usernameController,
                 hintText: 'Username',
                 obscureText: false,
+                type: TextInputType.emailAddress,
               ),
 
               const SizedBox(height: 10),
@@ -64,6 +65,7 @@ class SignupPage extends StatelessWidget {
                 controller: _passwordController,
                 hintText: 'Password',
                 obscureText: true,
+                type: TextInputType.text,
               ),
 
               const SizedBox(height: 10),
