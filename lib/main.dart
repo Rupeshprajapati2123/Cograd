@@ -1,4 +1,4 @@
-import 'package:cograd/Pages/MainPage.dart';
+import 'package:cograd/Pages/home.dart';
 import 'package:flutter/material.dart';
 
 Future<void> main() async {
@@ -20,7 +20,7 @@ class _MyAppState extends State<MyApp> {
       title: 'Fl',
       theme:
           ThemeData(primaryColor: Colors.white, backgroundColor: Colors.white),
-      home: MainPage(),
+      home: Home(),
     );
   }
 }
