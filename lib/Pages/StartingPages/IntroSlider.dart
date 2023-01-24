@@ -1,13 +1,17 @@
+import 'package:cograd/Pages/StartingPages/LoginPage.dart';
+import 'package:cograd/Pages/StartingPages/SignUpPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class IntroSlider extends StatefulWidget {
+  static const String id="IntroSlider";
   @override
   _IntroSliderState createState() => _IntroSliderState();
 }
 
 class _IntroSliderState extends State<IntroSlider> {
+
   final int _numPages = 3;
   final PageController _pageController = PageController(initialPage: 0);
   int _currentPage = 0;
@@ -267,7 +271,7 @@ class _IntroSliderState extends State<IntroSlider> {
                           padding: EdgeInsets.all(0),
                           child: Center(
                             child: Text(
-                              'Sign Up',
+                              'Log In',
                               style: GoogleFonts.poppins(
                                 color: Colors.white,
                                 fontSize: 16.0,
@@ -281,7 +285,7 @@ class _IntroSliderState extends State<IntroSlider> {
                   )),
               Spacer(),
               GestureDetector(
-                  onTap: () => {print('pressed')},
+                  onTap: () => {         },
                   // Navigator.push(context,
                   // MaterialPageRoute(builder: (context) => SignUpPage())),
                   child: Container(
@@ -289,7 +293,10 @@ class _IntroSliderState extends State<IntroSlider> {
                     width: 160,
                     color: Color(0xffff),
                     child: GestureDetector(
-                      onTap: () => {},
+                      onTap: () => {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context)=>SignupPage()))
+                      },
                       // Navigator.push(context,
                       // MaterialPageRoute(builder: (context) => SignUpPage())),
                       child: Center(
@@ -297,7 +304,7 @@ class _IntroSliderState extends State<IntroSlider> {
                           padding: EdgeInsets.all(0),
                           child: Center(
                             child: Text(
-                              'Log in',
+                              'Sign Up',
                               style: GoogleFonts.poppins(
                                 color: Color(0xff3D5CFF),
                                 fontSize: 16.0,

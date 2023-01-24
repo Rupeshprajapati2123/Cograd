@@ -1,21 +1,48 @@
-// import 'package:firebase_auth/firebase_auth.dart';
-// import 'package:modernloginui/pages/login_page.dart';
 import 'package:cograd/util/MyButton.dart';
 import 'package:cograd/util/MyTextField.dart';
 import 'package:flutter/material.dart';
-
-// import './welcum.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cograd/util/auth.dart';
 
 // import 'package:'
-class SignupPage extends StatelessWidget {
+class SignupPage extends StatefulWidget {
   SignupPage({super.key});
+  @override
+  State<SignupPage> createState() => _SignupPageState();}
+class _SignupPageState extends State<SignupPage> {
   static const String id = "signupPage";
+  String? errorMessage = '';
+  bool isLogin = true;
   // controllers for textfield
   bool showspin = false;
-  // final _auth = FirebaseAuth.instance;
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
-
+  Future<void> signInWithEmailAndPassword() async {
+    try {
+      await Auth().signInWithEmailAndPassword(
+        email: _usernameController.text,
+        password: _passwordController.text,
+      );
+    } on FirebaseAuthException catch (e) {
+      setState(() {
+        errorMessage = e.message;
+        print(e.message);
+      });
+    }
+  }
+  Future<void> createUserWithEmailAndPassword() async {
+    try {
+      await Auth().createUserWithEmailAndPassword(
+        email: _usernameController.text,
+        password: _passwordController.text,
+      );
+    } on FirebaseAuthException catch (e) {
+      setState(() {
+        errorMessage = e.message;
+        print(e.message);
+      });
+    }
+  }
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -87,7 +114,7 @@ class SignupPage extends StatelessWidget {
               const SizedBox(height: 25),
 
               // sign in button
-              MyButton(text: 'Create Account', onTap: () {}
+              MyButton(text: 'Create Account', onTap: () {createUserWithEmailAndPassword;}
                   // async {
                   //   try {
                   //     final newUser =

@@ -1,9 +1,11 @@
+import 'package:cograd/Pages/StartingPages/otp_screen.dart';
 import 'package:cograd/util/MyButton.dart';
 import 'package:cograd/util/MyTextField.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class EnterNumber extends StatelessWidget {
+  static const String id="EnterNumber";
   // final _usernameController = TextEditingController();
   // This widget is the root of your application.
   @override
@@ -32,16 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.send),
-        onPressed: () {
-          print("Floating button was pressed.");
 
-          // otpController.set(['2', '3', '5', '5', '7']);
-          // otpController.setValue('3', 0);
-          // otpController.setFocus(1);
-        },
-      ),
       body: Column(
         children: [
           Column(
@@ -92,7 +85,10 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           Container(
               margin: EdgeInsets.fromLTRB(0, 50, 0, 0),
-              child: MyButton(text: 'Continue', onTap: () => {})),
+              child: MyButton(text: 'Continue', onTap: () => {
+                Navigator.push(context,
+                MaterialPageRoute(builder: (context) => OtpScreen()))
+              })),
         ],
       ),
     );

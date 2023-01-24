@@ -1,15 +1,18 @@
 // import 'package:firebase_auth/firebase_auth.dart';
 // import 'package:modernloginui/pages/login_page.dart';
+import 'package:cograd/Pages/StartingPages/EnterNumber.dart';
+import 'package:cograd/Pages/StartingPages/otp_screen.dart';
 import 'package:cograd/util/MyButton.dart';
 import 'package:cograd/util/MyTextField.dart';
 import 'package:cograd/util/SquareTile.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 // import './welcum.dart';
 
 // import 'package:'
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
-  static const String id = "signupPage";
+  static const String id = "LoginPage";
   // controllers for textfield
   bool showspin = false;
   // final _auth = FirebaseAuth.instance;
@@ -50,7 +53,19 @@ class LoginPage extends StatelessWidget {
               const SizedBox(height: 50),
 
               // username textfield
-              Text('your email'),
+              Container(
+                alignment: Alignment.centerLeft,
+                margin: EdgeInsets.fromLTRB(22, 0, 0, 10),
+                child:Text(
+
+                  'Your Email',
+                  style: GoogleFonts.poppins(
+                    color: Color(0xff1f1f39),
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
               MyTextField(
                 controller: _usernameController,
                 hintText: 'Username',
@@ -59,7 +74,19 @@ class LoginPage extends StatelessWidget {
               ),
 
               const SizedBox(height: 10),
-              Text('your password'),
+              Container(
+                alignment: Alignment.centerLeft,
+                margin: EdgeInsets.fromLTRB(22, 0, 0, 10),
+                child:Text(
+
+                  'Your Password',
+                  style: GoogleFonts.poppins(
+                    color: Color(0xff1f1f39),
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
               // password textfield
               MyTextField(
                   controller: _passwordController,
@@ -86,7 +113,10 @@ class LoginPage extends StatelessWidget {
               const SizedBox(height: 25),
 
               // sign in button
-              MyButton(text: 'Create Account', onTap: () {}
+              MyButton(text: 'Create Account', onTap: () {
+                Navigator.push(context,
+                MaterialPageRoute(builder: (context) => EnterNumber()));
+              }
                   // async {
                   //   try {
                   //     final newUser =

@@ -7,6 +7,7 @@ import 'Course.dart';
 import 'MPage.dart';
 
 class Home extends StatefulWidget {
+  static const  String id="Home";
   @override
   _HomeState createState() => _HomeState();
 }

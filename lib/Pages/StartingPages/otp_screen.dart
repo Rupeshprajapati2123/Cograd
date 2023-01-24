@@ -1,3 +1,4 @@
+import 'package:cograd/Pages/home.dart';
 import 'package:cograd/util/MyButton.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -6,6 +7,7 @@ import 'package:otp_text_field/otp_text_field.dart';
 import 'package:otp_text_field/style.dart';
 
 class OtpScreen extends StatelessWidget {
+  static const String id="OtpScreen";
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -33,16 +35,16 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.send),
-        onPressed: () {
-          print("Floating button was pressed.");
-          otpController.clear();
-          // otpController.set(['2', '3', '5', '5', '7']);
-          // otpController.setValue('3', 0);
-          // otpController.setFocus(1);
-        },
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   child: Icon(Icons.send),
+      //   onPressed: () {
+      //     print("Floating button was pressed.");
+      //     otpController.clear();
+      //     // otpController.set(['2', '3', '5', '5', '7']);
+      //     // otpController.setValue('3', 0);
+      //     // otpController.setFocus(1);
+      //   },
+      // ),
       body: Column(
         children: [
           Container(
@@ -82,7 +84,10 @@ class _MyHomePageState extends State<MyHomePage> {
           Container(
               margin: EdgeInsets.fromLTRB(0, 100, 0, 0),
               child:
-                  MyButton(text: 'verify & Create Account', onTap: () => {})),
+                  MyButton(text: 'verify & Create Account', onTap: () => {
+                    Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Home()))
+                  })),
         ],
       ),
     );
